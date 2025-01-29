@@ -1,110 +1,160 @@
-body {
-    font-family: 'Merriweather', serif;
-    background-color: #f8f9fa;
-    color: #333;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-h1 {
-    font-family: 'Great Vibes', cursive;
+/* Body and Fonts */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Landing Page */
+#landing {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #f8c8dc, #ffe6f7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#landing h1 {
+    font-family: 'Pacifico', cursive;
     font-size: 3em;
-    color: #ff6347;
-    margin-top: 50px;
+    color: #ff6f61;
 }
 
 .quote {
     font-style: italic;
-    color: #6a5acd;
+    color: #ff3366;
     font-size: 1.5em;
 }
 
-.animation {
-    animation: float 3s ease-in-out infinite;
-    font-size: 50px;
-    color: #ff6347;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-section {
-    padding: 30px;
-    margin: 20px;
-}
-
+/* Love Letter Section */
 #love-letter {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin: 20px auto;
-    font-size: 1.1em;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-out;
 }
 
+#love-letter h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #ff3366;
+}
+
+#love-letter p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* Memory Timeline */
 #timeline {
-    display: flex;
-    justify-content: space-around;
-    overflow-x: scroll;
-    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .timeline-item {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    padding: 15px;
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+}
+
+.timeline-item img {
+    width: 100%;
+    height: auto;
+}
+
+.timeline-item p {
+    background-color: #fff;
+    padding: 10px;
+    color: #333;
+    font-size: 1.1em;
+    border-radius: 0 0 10px 10px;
+}
+
+.timeline-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Terms Section */
+#terms {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Accept Button */
+#accept {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 button {
-    background-color: #ff6347;
+    background-color: #ff6f61;
     color: white;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 12px 30px;
+    font-size: 1.2em;
     border: none;
-    border-radius: 50px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
 button:hover {
-    transform: scale(1.1);
+    background-color: #e64a4a;
+    transition: background-color 0.3s ease;
 }
 
-#terms {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin: 20px auto;
-}
-
+/* Pop-up */
 #popup {
-    background-color: #ffeb3b;
-    padding: 40px;
+    text-align: center;
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    display: none;
 }
 
-#popup button {
-    background-color: #ff6347;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin: 10px;
-    cursor: pointer;
+/* Responsive Design */
+@media (max-width: 600px) {
+    #landing h1 {
+        font-size: 2.2em;
+    }
+    .timeline-item {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
